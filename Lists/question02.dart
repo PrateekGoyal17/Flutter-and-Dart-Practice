@@ -1,6 +1,10 @@
 void main(){
-          var sum=0;
           List<int> l=[1,2,4,210,210];
-          l.where((element) => element>200).forEach((e) => sum=sum+=e);
-          print(sum);
-        }
+          int result = l.fold(0, (int acc, int element) {
+            if(element>200){
+              return acc + element;
+            }
+            return acc;
+          });
+          print(result);
+          }
